@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<input type="text" id="numInput"/>
+<button type="button" onclick="inSNT()">Show</button><br/>
+<p id="result">Dãy số nguyên tố cần tìm: </p>
+<script>
+    function checkSNT(n) {
+        if (n<2) {
+            return false;
+        } else if (n===2) {
+            return true;
+        } else {
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    return false;
+                }
+            } return true;
+        }
+    }
+    function inSNT() {
+        let N = parseInt(document.getElementById("numInput").value);
+        let array = Array();
+        let j = 0;
+        for (let i=1;i < N;i++) {
+            if (checkSNT(i)===true) {
+                array[j] = i;
+                j++;
+            }
+        }
+        document.getElementById('result').innerHTML += array;
+    }
+</script>
+</body>
+</html>
