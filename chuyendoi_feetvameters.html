@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+From feet (ft): <input id="ft" type="number" oninput="feetToMeter(this.value)"/><br/>
+<p>To meters (m): <span id="resuls"></span></p>
+From meters (m): <input id="m" type="number" oninput="meterToFeet(this.value)"/><br/>
+<p>To feet (ft): <span id="ketQua"></span></p>
+<script>
+    function feetToMeter(n) {
+        let feet = parseFloat(n);
+        if (feet>=0) {
+            document.getElementById('resuls').innerHTML = 0.305*feet.toFixed(3);
+        } else {
+            alert("Bạn nhập sai")
+        }
+    }
+    function meterToFeet() {
+        let meter = parseFloat(document.getElementById("m").value);
+        if (meter>=0) {
+            document.getElementById('ketQua').innerHTML = 3.279*meter.toFixed(3);
+        } else {
+            alert("Bạn nhập sai")
+        }
+    }
+</script>
+</body>
+</html>
